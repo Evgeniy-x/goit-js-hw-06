@@ -22,7 +22,7 @@ const galeryListCreate = images.map(({url, alt}) =>
 `<li><img src='${url}' alt='${alt}' style='height: 200px'></li>`
 );
 
-listImgEl.insertAdjacentHTML('beforeend', galeryListCreate);
+listImgEl.insertAdjacentHTML('beforeend', galeryListCreate.join(''));
 
 
 
