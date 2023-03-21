@@ -18,17 +18,23 @@ const listImgEl = document.querySelector('.gallery');
 listImgEl.style.display = 'flex';
 listImgEl.style.gap = '30px';
 
-const galeryList = images.map(image => {
-  const link = document.createElement('li');
+const galeryListCreate = images.map(({url, alt}) =>
+`<li><img src='${url}' alt='${alt}' style='height: 200px'></li>`
+);
 
-  const img = document.createElement('img');
-  img.src = image.url;
-  img.alt = image.alt;
-  img.style.height = '200px';
+listImgEl.insertAdjacentHTML('beforeend', galeryListCreate);
 
-  link.append(img);
-  return link
-});
 
-listImgEl.append(...galeryList)
+
+// const galeryList = images.map(image => {
+//   const link = document.createElement('li');
+
+//   const img = document.createElement('img');
+//   img.src = image.url;
+//   img.alt = image.alt;
+//   img.style.height = '200px';
+
+//   link.insertAdjacentHTML('beforeend', img);
+//   return link
+// });
 
